@@ -1,15 +1,16 @@
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 
 WORKDIR /app
 
 # ** Variables **
 
 ENV USERNAME=oe-user
-ENV BITBAKEDIR=/app/sources/bitbake
+ENV BITBAKEDIR=/app/sources/poky/bitbake
 
 # ** Provisioning the container **
 
 RUN apt-get update
+RUN apt-get install -y apt-utils
 
 # Copy packages.txt into the container
 
