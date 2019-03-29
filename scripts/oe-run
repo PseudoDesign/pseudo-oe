@@ -7,5 +7,6 @@ DIR="$( cd "$( dirname "$0" )" >/dev/null && pwd )/.."
 
 build=$1
 command=$2
+bitbakedir="sources/poky/bitbake"
 
-$DIR/docker/oe-execute "source sources/poky/oe-init-build-env $build; $command"
+$DIR/docker/oe-execute "export BITBAKEDIR=$bitbakedir; source sources/poky/oe-init-build-env $build; $command"
