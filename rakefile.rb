@@ -10,3 +10,15 @@ namespace :dev do
     bitbake(args[:environment], args[:image])
   end
 end
+
+
+namespace :celestial do
+  namespace :pi3 do
+    BUILD_NAME = "celestial-pi3-build"
+    IMAGE_NAME = "rpi-basic-image"
+    desc "Build the #{IMAGE_NAME} image in #{BUILD_NAME}"
+    task :build do
+      Rake::Task['dev:build'].invoke(IMAGE_NAME, BUILD_NAME)
+    end
+  end
+end
