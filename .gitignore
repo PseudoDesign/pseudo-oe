@@ -2,6 +2,8 @@ release
 *.swp
 deploy
 *build/*
+!*build/meta
+!*build/meta/*
 !*build/conf
 !*build/conf/bblayers.conf
 !*build/conf/local.conf

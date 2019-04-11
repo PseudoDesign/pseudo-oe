@@ -1,3 +1,5 @@
+DOCKER_IMAGE_NAME = 'pseudo-oe'
+
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
@@ -25,9 +27,18 @@ namespace :celestial do
       Rake::Task['dev:build'].invoke(BUILD_NAME, args[:target])
     end
 
+    BUILD_DIR = File.join(__dir__, BUILD_NAME).freeze
+    DOWNLOADS_DIR = File.join(__dir__, 'downloads')
+    SOURCES_DIR = File.join(__dir__, 'sources').freeze
+    META_DIR = File.join(BUILD_DIR, 'meta').freeze
     desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
     task :release do
-
+      sh "docker run \
+          -v #{BUILD_DIR}:/app/#{BUILD_NAME} \
+          -v #{SOURCES_DIR}:/app/sources \
+          -v #{META_DIR}:/app/meta \
+          -v #{DOWNLOADS_DIR}:/app/downloads \
+          -it #{DOCKER_IMAGE_NAME}"
     end
   end
 end
