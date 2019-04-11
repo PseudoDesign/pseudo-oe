@@ -50,7 +50,7 @@ ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 
-RUN mkdir -p /app/oe && chown -R oe-user:oe-user /app/oe
+RUN mkdir -p /app/oe/downloads && mkdir -p /app/oe/tmp && chown -R oe-user:oe-user /app/oe
 
 USER oe-user
 WORKDIR /app/oe
