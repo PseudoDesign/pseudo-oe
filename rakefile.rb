@@ -16,13 +16,18 @@ namespace :celestial do
     BUILD_NAME = 'celestial-pi3-build'.freeze
     IMAGE_NAME = 'rpi-basic-image'.freeze
     desc "Build the #{IMAGE_NAME} image in #{BUILD_NAME}"
-    task :build do
+    task :build_dev do
       Rake::Task['dev:build'].invoke(BUILD_NAME, IMAGE_NAME)
     end
 
     desc "Run the provided bitbake command string in the #{BUILD_NAME} context"
-    task :bitbake, [:target] do |_task, args|
+    task :bitbake_dev, [:target] do |_task, args|
       Rake::Task['dev:build'].invoke(BUILD_NAME, args[:target])
+    end
+
+    desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
+    task :release do
+
     end
   end
 end
