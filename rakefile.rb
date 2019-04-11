@@ -43,7 +43,6 @@ namespace :celestial do
           -v #{SOURCES_DIR}:/app/oe/sources \
           -v #{META_DIR}:/app/meta \
           -v #{DOWNLOADS_DIR}:/app/oe/downloads \
-          -v #{__dir__}/tmp:/app/oe/tmp \
           -it #{DOCKER_IMAGE_NAME}"
     end
   end
