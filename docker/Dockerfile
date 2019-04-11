@@ -51,6 +51,7 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 
 USER oe-user
+WORKDIR /app/oe
 
 ENTRYPOINT []
 CMD ["/bin/bash", "-c", "/app/meta/run.sh"]

@@ -1,5 +1,10 @@
 DOCKER_IMAGE_NAME = 'pseudo-oe'
 
+desc "Remove all temporary (non-download) files"
+task :clean_all do
+  rm_rf 'tmp'
+end
+
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
@@ -34,10 +39,10 @@ namespace :celestial do
     desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
     task :release do
       sh "docker run \
-          -v #{BUILD_DIR}:/app/#{BUILD_NAME} \
-          -v #{SOURCES_DIR}:/app/sources \
+          -v #{BUILD_DIR}:/app/oe/#{BUILD_NAME} \
+          -v #{SOURCES_DIR}:/app/oe/sources \
           -v #{META_DIR}:/app/meta \
-          -v #{DOWNLOADS_DIR}:/app/downloads \
+          -v #{DOWNLOADS_DIR}:/app/oe/downloads \
           -it #{DOCKER_IMAGE_NAME}"
     end
   end
