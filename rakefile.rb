@@ -39,7 +39,7 @@ namespace :celestial do
     desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
     task :release do
       sh "docker run \
-          -v #{BUILD_DIR}:/app/oe/#{BUILD_NAME} \
+          -v #{BUILD_DIR}:/app/oe/build \
           -v #{SOURCES_DIR}:/app/oe/sources \
           -v #{META_DIR}:/app/meta \
           -v #{DOWNLOADS_DIR}:/app/oe/downloads \
