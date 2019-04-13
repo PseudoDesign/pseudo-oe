@@ -40,6 +40,7 @@ namespace :celestial do
     ARTIFACTS_DIR = File.join(__dir__, 'artifacts').freeze
     desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
     task :release do
+      mkdir_f BUILD_DIR DOWNLOADS_DIR SOURCES_DIR META_DIR DEPLOY_DIR ARTIFACTS_DIR
       sh "docker run \
           -v #{BUILD_DIR}:/app/oe/build \
           -v #{SOURCES_DIR}:/app/oe/sources \
