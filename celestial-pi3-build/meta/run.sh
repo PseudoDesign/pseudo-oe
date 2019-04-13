@@ -1,7 +1,8 @@
+set -e
+
 PROJECT_NAME=celestial-pi3
 IMAGE_NAME=rpi-basic-image
 TIMESTAMP=$(date +"%Y-%d-%m-%H-%M-%S")
-mv "/app/oe/$PROJECT_NAME/tmp/deploy" /app/oe/
 RELEASE_HEADER="${PROJECT_NAME}_${IMAGE_NAME}_${TIMESTAMP}"
 if [ -z $RELEASE_UID ]; then
   RELEASE_HEADER="${RELEASE_HEADER}_${RELEASE_UID}"
