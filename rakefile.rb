@@ -36,6 +36,8 @@ namespace :celestial do
     DOWNLOADS_DIR = File.join(__dir__, 'downloads')
     SOURCES_DIR = File.join(__dir__, 'sources').freeze
     META_DIR = File.join(BUILD_DIR, 'meta').freeze
+    DEPLOY_DIR = File.join(__dir__, 'deploy').freeze
+    ARTIFACTS_DIR = File.join(__dir__, 'artifacts').freeze
     desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
     task :release do
       sh "docker run \
@@ -43,6 +45,8 @@ namespace :celestial do
           -v #{SOURCES_DIR}:/app/oe/sources \
           -v #{META_DIR}:/app/meta \
           -v #{DOWNLOADS_DIR}:/app/oe/downloads \
+          -v #{DEPLOY_DIR}:/mnt/deploy \
+          -v #{ARTIFACTS_DIR}:/mnt/artifacts \
           -it #{DOCKER_IMAGE_NAME}"
     end
   end
