@@ -1,7 +1,7 @@
 BUILD_NAME = 'celestial-pi3-build'.freeze
 IMAGE_NAME = 'rpi-basic-image'.freeze
 
-DOWNLOADS_DIR = File.join(__dir__, '..', 'downloads')
+DOWNLOADS_DIR = File.join(__dir__, '..', 'downloads').freeze
 SOURCES_DIR = File.join(__dir__, '..', 'sources').freeze
 META_DIR = File.join(__dir__, 'meta').freeze
 DEPLOY_DIR = File.join(__dir__, 'deploy').freeze
