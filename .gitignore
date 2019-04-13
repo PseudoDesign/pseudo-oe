@@ -4,6 +4,7 @@ release
 *.swp
 deploy
 *build/*
+!*build/rake-inc.rb
 !*build/meta
 !*build/meta/*
 !*build/conf

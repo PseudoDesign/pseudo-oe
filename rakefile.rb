@@ -1,8 +1,7 @@
 DOCKER_IMAGE_NAME = 'pseudo-oe'
 
-desc "Remove all temporary (non-download) files"
-task :clean_all do
-  rm_rf 'tmp'
+def mkdir_f(dir)
+  mkdir dir unless File.directory?(dir)
 end
 
 namespace :dev do
