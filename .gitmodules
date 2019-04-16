@@ -8,4 +8,4 @@
 	branch = thud
 [submodule "sources/meta-pseudodesign"]
 	path = sources/meta-pseudodesign
-	url = git@github.com:PseudoDesign/meta-pseudodesign.git
+	url = https://github.com/PseudoDesign/meta-pseudodesign.git
