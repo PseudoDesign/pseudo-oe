@@ -18,7 +18,7 @@ task :bitbake_dev, [:target] do |_task, args|
 end
 
 desc "Build a #{BUILD_NAME} - #{IMAGE_NAME} release image"
-task :release do
+task :release => ["docker:image"] do
   mkdir_f DOWNLOADS_DIR
   mkdir_f DEPLOY_DIR
   mkdir_f ARTIFACTS_DIR

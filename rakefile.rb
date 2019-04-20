@@ -17,6 +17,10 @@ namespace :dev do
   end
 end
 
+namespace :docker do
+  require_relative 'docker/rake-inc.rb'
+end
+
 namespace :celestial do
   namespace :pi3 do
     require_relative 'celestial-pi3-build/rake-inc.rb'  
