@@ -28,3 +28,7 @@
 	path = sources/meta-toradex-bsp-common
 	url = git://git.toradex.com/meta-toradex-bsp-common.git
 	branch = thud-next
+[submodule "sources/meta-toradex-nxp"]
+	path = sources/meta-toradex-nxp
+	url = git://git.toradex.com/meta-toradex-nxp.git
+	branch = thud-next
