@@ -9,3 +9,7 @@
 [submodule "sources/meta-pseudodesign"]
 	path = sources/meta-pseudodesign
 	url = https://github.com/PseudoDesign/meta-pseudodesign.git
+[submodule "sources/openembedded-core"]
+	path = sources/openembedded-core
+	url = git://git.openembedded.org/openembedded-core
+	branch = thud
