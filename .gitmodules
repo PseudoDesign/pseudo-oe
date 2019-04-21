@@ -13,3 +13,6 @@
 	path = sources/openembedded-core
 	url = git://git.openembedded.org/openembedded-core
 	branch = thud
+[submodule "sources/meta-freescale"]
+	path = sources/meta-freescale
+	url = https://github.com/Freescale/meta-freescale.git
