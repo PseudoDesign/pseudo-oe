@@ -24,3 +24,7 @@
 	path = sources/meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
 	branch = thud
+[submodule "sources/meta-toradex-bsp-common"]
+	path = sources/meta-toradex-bsp-common
+	url = git://git.toradex.com/meta-toradex-bsp-common.git
+	branch = thud-next
