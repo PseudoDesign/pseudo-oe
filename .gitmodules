@@ -40,3 +40,11 @@
 	path = sources/meta-fsl-demos
 	url = https://github.com/Freescale/meta-fsl-demos.git
 	branch = thud
+[submodule "sources/meta-lxde"]
+	path = sources/meta-lxde
+	url = git://git.toradex.com/meta-lxde.git
+	branch = thud-next
+[submodule "sources/meta-qt4"]
+	path = sources/meta-qt4
+	url = git://git.yoctoproject.org/meta-qt4
+	branch = thud
