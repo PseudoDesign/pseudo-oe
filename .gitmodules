@@ -62,3 +62,7 @@
 [submodule "sources/meta-rust"]
 	path = sources/meta-rust
 	url = https://github.com/meta-rust/meta-rust.git
+[submodule "sources/meta-qt5-extra"]
+	path = sources/meta-qt5-extra
+	url = https://github.com/schnitzeltony/meta-qt5-extra.git
+	branch = thud
