@@ -32,3 +32,7 @@
 	path = sources/meta-toradex-nxp
 	url = git://git.toradex.com/meta-toradex-nxp.git
 	branch = thud-next
+[submodule "sources/meta-toradex-demos"]
+	path = sources/meta-toradex-demos
+	url = git://git.toradex.com/meta-toradex-demos.git
+	branch = thud-next
