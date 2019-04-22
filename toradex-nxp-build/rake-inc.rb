@@ -1,5 +1,5 @@
 BUILD_NAME = 'toradex-nxp-build'.freeze
-IMAGE_NAME = 'core-image-minimal'.freeze
+IMAGE_NAME = 'console-tdx-image'.freeze
 
 DOWNLOADS_DIR = File.join(__dir__, '..', 'downloads').freeze
 SOURCES_DIR = File.join(__dir__, '..', 'sources').freeze
