@@ -55,3 +55,7 @@
 [submodule "sources/meta-browser"]
 	path = sources/meta-browser
 	url = https://github.com/OSSystems/meta-browser.git
+[submodule "sources/meta-freescale-distro"]
+	path = sources/meta-freescale-distro
+	url = https://github.com/Freescale/meta-freescale-distro.git
+	branch = thud
