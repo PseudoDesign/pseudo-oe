@@ -66,3 +66,7 @@
 	path = sources/meta-qt5-extra
 	url = https://github.com/schnitzeltony/meta-qt5-extra.git
 	branch = thud
+[submodule "sources/meta-virtualization"]
+	path = sources/meta-virtualization
+	url = git://git.yoctoproject.org/meta-virtualization
+	branch = thud
