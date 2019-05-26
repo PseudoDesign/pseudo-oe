@@ -70,3 +70,6 @@
 	path = sources/meta-virtualization
 	url = git://git.yoctoproject.org/meta-virtualization
 	branch = thud
+[submodule "sources/meta-celestial"]
+	path = sources/meta-celestial
+	url = https://github.com/PseudoDesign/meta-celestial.git
