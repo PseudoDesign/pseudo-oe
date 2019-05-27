@@ -73,7 +73,3 @@
 [submodule "sources/meta-celestial"]
 	path = sources/meta-celestial
 	url = https://github.com/PseudoDesign/meta-celestial.git
-[submodule "sources/meta-iot-cloud"]
-	path = sources/meta-iot-cloud
-	url = git@github.com:intel-iot-devkit/meta-iot-cloud.git
-	branch = thud
