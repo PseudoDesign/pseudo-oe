@@ -25,6 +25,10 @@ namespace :celestial do
   namespace :pi3 do
     require_relative 'celestial-pi3-build/rake-inc.rb'  
   end
+
+  namespace :pi4 do
+    require_relative 'celestial-pi4-build/rake-inc.rb'
+  end
 end
 
 #namespace :toradex do
