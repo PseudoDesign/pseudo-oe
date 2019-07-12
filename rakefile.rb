@@ -25,6 +25,7 @@ namespace :dev do
 
   desc 'Build a local development image'
   task :build, [:environment, :target] do |_task, args|
+    increment_build_number(args[:environment])
     bitbake(args[:environment], args[:target])
   end
 end
