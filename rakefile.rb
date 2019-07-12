@@ -4,6 +4,18 @@ def mkdir_f(dir)
   mkdir dir unless File.directory?(dir)
 end
 
+def increment_build_number(environment)
+  temp_file = File.join(__dir__, environment, ".build-num")
+  extras_file = File.join(__dir__, environment, ".extras.conf")
+  if File.file?(temp_file)
+    build_num = File.read(temp_file).to_i + 1
+  else
+    build_num = 0
+  end
+  `echo #{build_num} > #{temp_file}`
+  `echo 'BSP_BUILD_NUMBER = "#{build_num}"' > #{extras_file}`
+end
+
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
