@@ -14,6 +14,8 @@ def increment_build_number(environment)
   end
   `echo #{build_num} > #{temp_file}`
   `echo 'BSP_BUILD_NUMBER = "#{build_num}"' > #{extras_file}`
+  branch_name = `git rev-parse --abbrev-ref HEAD`.gsub("\n", "")
+  `echo 'BSP_VERSION = \"#{branch_name}\"' >> #{extras_file}`
 end
 
 namespace :dev do
