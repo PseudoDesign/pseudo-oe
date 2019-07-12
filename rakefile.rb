@@ -19,13 +19,13 @@ end
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
-    cmd = "#{RUN_SCRIPT} #{project} \"bitbake #{target}\""
+    cmd = "#{RUN_SCRIPT} #{project} \"bitbake --postread=.extras.conf #{target}\""
     sh cmd
   end
 
   desc 'Build a local development image'
   task :build, [:environment, :target] do |_task, args|
-    bitbake(args[:environment], "--postread=.extras.conf #{args[:target]}")
+    bitbake(args[:environment], args[:target])
   end
 end
 
