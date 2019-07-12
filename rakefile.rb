@@ -25,7 +25,7 @@ namespace :dev do
 
   desc 'Build a local development image'
   task :build, [:environment, :target] do |_task, args|
-    bitbake(args[:environment], args[:target])
+    bitbake(args[:environment], "--postread=.extras.conf #{args[:target]}")
   end
 end
 
