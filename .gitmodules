@@ -9,3 +9,67 @@
 [submodule "sources/meta-pseudodesign"]
 	path = sources/meta-pseudodesign
 	url = https://github.com/PseudoDesign/meta-pseudodesign.git
+[submodule "sources/openembedded-core"]
+	path = sources/openembedded-core
+	url = git://git.openembedded.org/openembedded-core
+	branch = thud
+[submodule "sources/meta-freescale"]
+	path = sources/meta-freescale
+	url = https://github.com/Freescale/meta-freescale.git
+[submodule "sources/meta-freescale-3rdparty"]
+	path = sources/meta-freescale-3rdparty
+	url = https://github.com/Freescale/meta-freescale-3rdparty.git
+	branch = thud
+[submodule "sources/meta-openembedded"]
+	path = sources/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = thud
+[submodule "sources/meta-toradex-bsp-common"]
+	path = sources/meta-toradex-bsp-common
+	url = git://git.toradex.com/meta-toradex-bsp-common.git
+	branch = thud-next
+[submodule "sources/meta-toradex-nxp"]
+	path = sources/meta-toradex-nxp
+	url = git://git.toradex.com/meta-toradex-nxp.git
+	branch = thud-next
+[submodule "sources/meta-toradex-demos"]
+	path = sources/meta-toradex-demos
+	url = git://git.toradex.com/meta-toradex-demos.git
+	branch = thud-next
+[submodule "sources/meta-fsl-demos"]
+	path = sources/meta-fsl-demos
+	url = https://github.com/Freescale/meta-fsl-demos.git
+	branch = thud
+[submodule "sources/meta-lxde"]
+	path = sources/meta-lxde
+	url = git://git.toradex.com/meta-lxde.git
+	branch = thud-next
+[submodule "sources/meta-qt4"]
+	path = sources/meta-qt4
+	url = git://git.yoctoproject.org/meta-qt4
+	branch = thud
+[submodule "sources/meta-qt5"]
+	path = sources/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
+	branch = thud
+[submodule "sources/meta-browser"]
+	path = sources/meta-browser
+	url = https://github.com/OSSystems/meta-browser.git
+[submodule "sources/meta-freescale-distro"]
+	path = sources/meta-freescale-distro
+	url = https://github.com/Freescale/meta-freescale-distro.git
+	branch = thud
+[submodule "sources/meta-rust"]
+	path = sources/meta-rust
+	url = https://github.com/meta-rust/meta-rust.git
+[submodule "sources/meta-qt5-extra"]
+	path = sources/meta-qt5-extra
+	url = https://github.com/schnitzeltony/meta-qt5-extra.git
+	branch = thud
+[submodule "sources/meta-virtualization"]
+	path = sources/meta-virtualization
+	url = git://git.yoctoproject.org/meta-virtualization
+	branch = thud
+[submodule "sources/meta-celestial"]
+	path = sources/meta-celestial
+	url = https://github.com/PseudoDesign/meta-celestial.git
