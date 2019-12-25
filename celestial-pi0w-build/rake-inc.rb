@@ -29,5 +29,5 @@ task :release => ["docker:image"] do
       -v #{CELESTIAL_PI0w_DOWNLOADS_DIR}:/app/oe/downloads \
       -v #{CELESTIAL_PI0w_DEPLOY_DIR}:/mnt/deploy \
       -v #{CELESTIAL_PI0w_ARTIFACTS_DIR}:/mnt/artifacts \
-      #{DOCKER_IMAGE_NAME}"
+      -it #{DOCKER_IMAGE_NAME}"
 end
