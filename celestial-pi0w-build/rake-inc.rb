@@ -22,7 +22,7 @@ task :release => ["docker:image"] do
   mkdir_f CELESTIAL_PI0w_DOWNLOADS_DIR
   mkdir_f CELESTIAL_PI0w_DEPLOY_DIR
   mkdir_f CELESTIAL_PI0w_ARTIFACTS_DIR
-  sh "docker run \
+  sh "docker run --rm \
       -v #{__dir__}:/app/oe/build \
       -v #{CELESTIAL_PI0w_SOURCES_DIR}:/app/oe/sources \
       -v #{CELESTIAL_PI0w_META_DIR}:/app/meta \
