@@ -4,4 +4,4 @@ PROJECT_ROOT=$(realpath "`dirname \"$0\"`/..")
 
 command="'$*'"
 
-docker run -v $PROJECT_ROOT/user:/home/$USERNAME -v $PROJECT_ROOT:/app/oe --user $USERNAME $IMAGE_NAME /bin/bash -c "cd /app/oe; '$command'"
+docker run --rm -v $PROJECT_ROOT/user:/home/$USERNAME -v $PROJECT_ROOT:/app/oe --user $USERNAME -it $IMAGE_NAME /bin/bash -c "cd /app/oe; '$command'"
