@@ -21,6 +21,8 @@ end
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
+    priv_locals = File.join(__dir__, project, "priv-local.conf")
+    extras_file = File.join(__dir__, environment, ".extras.conf")
     cmd = "#{RUN_SCRIPT} #{project} \"bitbake --postread=.extras.conf #{target}\""
     sh cmd
   end

@@ -14,6 +14,7 @@ end
 
 desc "Run the provided bitbake command string in the #{BUILD_NAME} context"
 task :bitbake_dev, [:target] do |_task, args|
+  puts "target is " + args[:target]
   Rake::Task['dev:build'].invoke(CELESTIAL_PI0w_BUILD_NAME, args[:target])
 end
 
