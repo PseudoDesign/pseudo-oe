@@ -28,7 +28,7 @@ namespace :dev do
     sh cmd
   end
 
-  desc 'Build a local development image'
+  desc 'Build a local development image, eg "rake dev:build[celestial-pi0w-build,core-image-base]"'
   task :build, [:environment, :target] do |_task, args|
     increment_build_number(args[:environment])
     bitbake(args[:environment], args[:target])
