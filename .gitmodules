@@ -73,3 +73,6 @@
 [submodule "sources/meta-celestial"]
 	path = sources/meta-celestial
 	url = https://github.com/PseudoDesign/meta-celestial.git
+[submodule "sources/meta-dbox"]
+	path = sources/meta-dbox
+	url = git@github.com:PseudoDesign/meta-dbox.git
