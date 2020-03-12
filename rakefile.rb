@@ -21,11 +21,14 @@ end
 namespace :dev do
   RUN_SCRIPT = File.join(__dir__, 'scripts', 'oe-run')
   def bitbake(project, target)
+    priv_local = File.join(__dir__, project, "conf", "priv-local.conf")
+    extras_file = File.join(__dir__, project, ".extras.conf")
+    `cat #{priv_local} >> #{extras_file}`
     cmd = "#{RUN_SCRIPT} #{project} \"bitbake --postread=.extras.conf #{target}\""
     sh cmd
   end
 
-  desc 'Build a local development image'
+  desc 'Build a local development image, eg "rake dev:build[celestial-pi0w-build,core-image-base]"'
   task :build, [:environment, :target] do |_task, args|
     increment_build_number(args[:environment])
     bitbake(args[:environment], args[:target])
@@ -43,6 +46,10 @@ namespace :celestial do
 
   namespace :pi4 do
     require_relative 'celestial-pi4-build/rake-inc.rb'
+  end
+
+  namespace :pi0w do
+    require_relative 'celestial-pi0w-build/rake-inc.rb'
   end
 end
 
