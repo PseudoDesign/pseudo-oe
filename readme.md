@@ -1,6 +1,6 @@
 # pseudo-oe
 
-PseudoDesign's WIP openembedded build environment
+PseudoDesign's openembedded build environment
 
 ## Rake
 
