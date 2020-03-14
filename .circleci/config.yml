@@ -12,9 +12,9 @@ jobs:
             - run:
                 name: Fetch Downloads
                 command: |
-                export BITBAKEDIR=$(pwd)/sources/poky/bitbake
-                source sources/poky/eo-init-build-env celestial-pi0w-build
-                bitbake -c fetch core-image-base
+                    export BITBAKEDIR=$(pwd)/sources/poky/bitbake
+                    source sources/poky/eo-init-build-env celestial-pi0w-build
+                    bitbake -c fetch core-image-base
 
 workflows:
     pseudo-oe:
