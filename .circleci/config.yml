@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+    docker_bringup:
+        docker:
+            - image: pseudodesign/pseudo-oe-docker:latest
+        resource_class: small
+        steps:
+            - checkout
+            - run:
+                name: Bitbake Test
+                command: ls
+
+workflows:
+    pseudo-oe:
+        jobs:
+            - docker_bringup
+            
