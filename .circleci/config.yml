@@ -8,8 +8,7 @@ jobs:
         steps:
             # Checkout code and submodules
             - checkout
-            - run: git submodule sync
-            - run: git submodule update --init
+            - run: git submodule update --init --recursive
             - run:
                 name: Run Build Script from "meta"
                 command: ./celestial-pi0w-build/meta/run.sh
