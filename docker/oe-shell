@@ -1,4 +1,4 @@
-IMAGE_NAME=pseudo-oe
+IMAGE_NAME=pseudodesign/pseudo-oe-docker:latest
 USERNAME=oe-user
 PROJECT_ROOT=$(realpath "`dirname \"$0\"`/..")
 
