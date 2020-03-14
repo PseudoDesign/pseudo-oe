@@ -6,13 +6,15 @@ jobs:
             - image: pseudodesign/pseudo-oe-docker:latest
         resource_class: small
         steps:
+            # Checkout code and submodules
             - checkout
+            - run: git submodule sync
+            - run: git submodule update --init
             - run:
-                name: Bitbake Test
-                command: ls
+                name: Run Build Script from "meta"
+                command: ./celestial-pi0w-build/meta/run.sh
 
 workflows:
     pseudo-oe:
         jobs:
             - docker_bringup
-            
