@@ -15,7 +15,7 @@ jobs:
                     pwd
                     export BITBAKEDIR=$(pwd)/sources/poky/bitbake
                     source sources/poky/oe-init-build-env celestial-pi0w-build
-                    bitbake -c fetch core-image-base
+                    bitbake -cv fetch core-image-base
 
 workflows:
     pseudo-oe:
