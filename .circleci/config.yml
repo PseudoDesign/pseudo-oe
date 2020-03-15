@@ -4,7 +4,6 @@ jobs:
     docker_bringup:
         docker:
             - image: pseudodesign/pseudo-oe-docker:latest
-        resource_class: small
         steps:
             # Checkout code and submodules
             - checkout
