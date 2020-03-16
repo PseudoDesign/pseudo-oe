@@ -4,8 +4,7 @@ jobs:
     docker_bringup:
         docker:
             - image: pseudodesign/pseudo-oe-docker:latest
-        working_directory:
-            - /app/oe
+        working_directory: /app/oe
         steps:
             # Checkout code and submodules
             - checkout
