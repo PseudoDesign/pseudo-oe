@@ -9,7 +9,9 @@ jobs:
         steps:
             # Checkout code and submodules
             - checkout
-            - run: git submodule update --init --recursive
+            - run: 
+                name: Fetch Submodules
+                command: git submodule update --init --recursive
             - restore_cache:
                 key: build-sources
             - run:
