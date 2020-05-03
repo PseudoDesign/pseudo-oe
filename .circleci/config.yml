@@ -28,24 +28,18 @@ jobs:
                   - build-downloads-{{ checksum ".sources_md5.txt" }}
                   - build-downloads
             - run:
-                name: Fetch Downloads
-                command: |
-                    export BITBAKEDIR=$(pwd)/sources/poky/bitbake
-                    source sources/poky/oe-init-build-env celestial-pi0w-build
-                    bitbake -v core-image-base --runall=fetch 
-            - save_cache:
-                key: build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum "celestial-pi0w-build/conf/bblayers.conf" }}
-                paths: 
-                    - "downloads"
-            - run:
                 name: Performing Build
                 command: |
                     export BITBAKEDIR=$(pwd)/sources/poky/bitbake
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base
+            - save_cache:
+                key: build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum "celestial-pi0w-build/conf/bblayers.conf" }}
+                paths: 
+                    - "downloads"
             - store_artifacts:
                 path: celestial-pi0w-build/tmp/deploy
-                
+
 workflows:
     pseudo-oe:
         jobs:
