@@ -12,9 +12,19 @@ jobs:
             - run: 
                 name: Fetch Submodules
                 command: git submodule update --init --recursive
+            - run:
+                name: Checksumming Sources Directory
+                command: |
+                  cd sources
+                  { export LC_ALL=C;
+                    find -type f -exec wc -c {} \; | sort; echo;
+                    find -type f -exec md5sum {} + | sort; echo;
+                    find . -type d | sort; find . -type d | sort | md5sum;
+                  } | md5sum | awk '{print $1}' > ../.sources_md5.txt
+                  cd ..
             - restore_cache:
                 keys: 
-                  - build-downloads-{{ checksum "sources" }}
+                  - build-downloads-{{ checksum "sources_md5.txt" }}
                   - build-downloads-
             - run:
                 name: Fetch Downloads
@@ -23,7 +33,7 @@ jobs:
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base --runall=fetch 
             - save_cache:
-                key: build-sources-{{ checksum "sources" }}
+                key: build-sources-{{ checksum "sources_md5.txt" }}
                 paths: 
                     - "downloads"
 
