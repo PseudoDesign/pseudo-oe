@@ -32,7 +32,7 @@ jobs:
                 command: |
                     export BITBAKEDIR=$(pwd)/sources/poky/bitbake
                     source sources/poky/oe-init-build-env celestial-pi0w-build
-                    bitbake -v core-image-base
+                    bitbake core-image-base
             - save_cache:
                 key: build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum "celestial-pi0w-build/conf/bblayers.conf" }}
                 paths: 
