@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
     # Update the sources directory with packages needed for this project.
-    fetch_sources:
+    celestial-pi0w-build:
         docker:
             - image: pseudodesign/pseudo-oe-docker:latest
         working_directory: /app/oe
@@ -37,7 +37,16 @@ jobs:
                 key: build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum "celestial-pi0w-build/conf/bblayers.conf" }}
                 paths: 
                     - "downloads"
+            - run:
+                name: Performing Build
+                command: |
+                    export BITBAKEDIR=$(pwd)/sources/poky/bitbake
+                    source sources/poky/oe-init-build-env celestial-pi0w-build
+                    bitbake -v core-image-base
+            - store_artifacts:
+                path: celestial-pi0w-build/tmp/deploy
+                
 workflows:
     pseudo-oe:
         jobs:
-            - fetch_sources
+            - celestial-pi0w-build
