@@ -13,8 +13,9 @@ jobs:
                 name: Fetch Submodules
                 command: git submodule update --init --recursive
             - restore_cache:
-                key: build-downloads-{{ checksum "sources" }}
-                key: build-downloads-
+                keys: 
+                  - build-downloads-{{ checksum "sources" }}
+                  - build-downloads-
             - run:
                 name: Fetch Downloads
                 command: |
