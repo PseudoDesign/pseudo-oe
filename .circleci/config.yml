@@ -5,7 +5,7 @@ jobs:
     celestial-pi0w-build:
         docker:
             - image: pseudodesign/pseudo-oe-docker:latest
-        resource_class: 2xlarge
+        resource_class: xlarge
         working_directory: /app/oe
         steps:
             # Checkout code and submodules
