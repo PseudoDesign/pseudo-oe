@@ -44,10 +44,10 @@ jobs:
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base --runall=fetch 
             - save_cache:
-                key: build-sources-{{ checksum ".sources_md5.txt" }}-{{ checksum ".conf_md5.txt" }}
+                key: build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum ".conf_md5.txt" }}
                 paths: 
                     - "downloads"
-                    
+
 workflows:
     pseudo-oe:
         jobs:
