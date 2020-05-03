@@ -1,7 +1,8 @@
 version: 2.1
 
 jobs:
-    docker_bringup:
+    # Update the sources directory with packages needed for this project.
+    fetch_sources:
         docker:
             - image: pseudodesign/pseudo-oe-docker:latest
         working_directory: /app/oe
@@ -9,15 +10,21 @@ jobs:
             # Checkout code and submodules
             - checkout
             - run: git submodule update --init --recursive
+            - restore_cache:
+                key: build-sources
             - run:
                 name: Fetch Downloads
                 command: |
-                    pwd
                     export BITBAKEDIR=$(pwd)/sources/poky/bitbake
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base --runall=fetch 
+            - save_cache:
+                key: build-sources
+                paths: 
+                    - "sources"
+
 
 workflows:
     pseudo-oe:
         jobs:
-            - docker_bringup
+            - fetch_sources
