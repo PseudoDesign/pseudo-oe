@@ -13,7 +13,7 @@ jobs:
                 name: Fetch Submodules
                 command: git submodule update --init --recursive
             - restore_cache:
-                key: build-sources
+                key: build-downloads
             - run:
                 name: Fetch Downloads
                 command: |
@@ -23,7 +23,7 @@ jobs:
             - save_cache:
                 key: build-sources
                 paths: 
-                    - "sources"
+                    - "downloads"
 
 
 workflows:
