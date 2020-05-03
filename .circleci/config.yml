@@ -22,9 +22,19 @@ jobs:
                     find . -type d | sort; find . -type d | sort | md5sum;
                   } | md5sum | awk '{print $1}' > ../.sources_md5.txt
                   cd ..
+            - run:
+                name: Checksumming Build Config Directory
+                command: |
+                  cd celestial-pi0w-build/conf
+                  { export LC_ALL=C;
+                    find -type f -exec wc -c {} \; | sort; echo;
+                    find -type f -exec md5sum {} + | sort; echo;
+                    find . -type d | sort; find . -type d | sort | md5sum;
+                  } | md5sum | awk '{print $1}' > ../../.conf_md5.txt
+                  cd ../..
             - restore_cache:
                 keys: 
-                  - build-downloads-{{ checksum ".sources_md5.txt" }}
+                  - build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum ".conf_md5.txt" }}
                   - build-downloads-
             - run:
                 name: Fetch Downloads
@@ -33,7 +43,7 @@ jobs:
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base --runall=fetch 
             - save_cache:
-                key: build-sources-{{ checksum ".sources_md5.txt" }}
+                key: build-sources-{{ checksum ".sources_md5.txt" }}-{{ checksum ".conf_md5.txt" }}
                 paths: 
                     - "downloads"
 
