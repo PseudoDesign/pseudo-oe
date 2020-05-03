@@ -35,7 +35,8 @@ jobs:
             - restore_cache:
                 keys: 
                   - build-downloads-{{ checksum ".sources_md5.txt" }}-{{ checksum ".conf_md5.txt" }}
-                  - build-downloads-
+                  - build-downloads-{{ checksum ".sources_md5.txt" }}
+                  - build-downloads
             - run:
                 name: Fetch Downloads
                 command: |
