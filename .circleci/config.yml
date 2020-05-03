@@ -13,7 +13,8 @@ jobs:
                 name: Fetch Submodules
                 command: git submodule update --init --recursive
             - restore_cache:
-                key: build-downloads
+                key: build-downloads-{{ checksum "sources" }}
+                key: build-downloads-
             - run:
                 name: Fetch Downloads
                 command: |
@@ -21,7 +22,7 @@ jobs:
                     source sources/poky/oe-init-build-env celestial-pi0w-build
                     bitbake -v core-image-base --runall=fetch 
             - save_cache:
-                key: build-sources
+                key: build-sources-{{ checksum "sources" }}
                 paths: 
                     - "downloads"
 
