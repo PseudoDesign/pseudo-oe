@@ -43,7 +43,7 @@ jobs:
                 command: |
                     export BITBAKEDIR=$(pwd)/sources/poky/bitbake
                     source sources/poky/oe-init-build-env celestial-pi0w-build
-                    bitbake -v core-image-base
+                    bitbake core-image-base
             - store_artifacts:
                 path: celestial-pi0w-build/tmp/deploy
                 
@@ -55,4 +55,3 @@ workflows:
                     branches:
                         only:
                             - celestial-pi0w-build
-
