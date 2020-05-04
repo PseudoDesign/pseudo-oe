@@ -50,4 +50,9 @@ jobs:
 workflows:
     pseudo-oe:
         jobs:
-            - celestial-pi0w-build
+            - celestial-pi0w-build:
+                filters:
+                    branches:
+                        only:
+                            - celestial-pi0w-build
+
